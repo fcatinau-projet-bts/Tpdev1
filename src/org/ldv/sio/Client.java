@@ -1,16 +1,29 @@
 package org.ldv.sio;
 
+import java.util.ArrayList;
+
 public class Client {
     private String nom;
     private String prenom;
     private Adresse Habitation;
-    private Adresse Livraison;
+    private ArrayList<Adresse> Livraison;
 
-    public Client(String nom, String prenom, Adresse Livraison, Adresse Habitation) {
+    public Client(String nom, String prenom, ArrayList<Adresse>Livraison, Adresse Habitation) {
         this.nom = nom;
         this.prenom = prenom;
-        this.Habitation = Habitation;
-        this.Livraison = Livraison;
+        if(this.Livraison == null){
+            this.Habitation=Habitation;
+            this.Livraison =Livraison;
+        }else {
+            this.Livraison=Livraison;
+            this.Habitation=Habitation;
+        }
+    }
+
+    public Client(String nom, String prenom, Adresse habitation) {
+        this.nom = nom;
+        this.prenom = prenom;
+        Habitation = habitation;
     }
 
     public Client(String nom, String prenom) {
@@ -18,11 +31,21 @@ public class Client {
         this.prenom = prenom;
     }
 
-    public Client(String nom, String prenom, Adresse habitation) {
-        this.nom = nom;
-        this.prenom = prenom;
-        Livraison = habitation;
 
+    public Adresse getHabitation() {
+        return Habitation;
+    }
+
+    public void setHabitation(Adresse habitation) {
+        Habitation = habitation;
+    }
+
+    public ArrayList<Adresse> getLivraison() {
+        return Livraison;
+    }
+
+    public void setLivraison(ArrayList<Adresse> livraison) {
+        Livraison = livraison;
     }
 
     public String getNom() {
@@ -41,15 +64,13 @@ public class Client {
         this.prenom = prenom;
     }
 
-
-
     @Override
     public String toString() {
         return "Client{" +
                 "nom='" + nom + '\n' +
-                " Prenom='" + prenom + '\n' +
-                " Habitation='" + Habitation + '\n' +
-                " Livraison='" + Livraison + '\n' +
+                ", prenom='" + prenom + '\n' +
+                ", Habitation=" + Habitation + '\n' +'\n'+
+                ", Livraison=" + Livraison + '\n' +'\n'+
                 '}';
     }
 }
