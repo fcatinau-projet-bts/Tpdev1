@@ -7,10 +7,12 @@ public class Client {
     private String prenom;
     private Adresse Habitation;
     private ArrayList<Adresse> Livraison;
+    private AdresseEtendue AdresseEtendue;
 
-    public Client(String nom, String prenom, ArrayList<Adresse>Livraison, Adresse Habitation) {
+    public Client(String nom, String prenom, ArrayList<Adresse>Livraison, Adresse Habitation,AdresseEtendue AdresseEtendue) {
         this.nom = nom;
         this.prenom = prenom;
+        this.AdresseEtendue= AdresseEtendue;
         if(this.Livraison == null){
             this.Habitation=Habitation;
             this.Livraison =Livraison;
@@ -20,11 +22,16 @@ public class Client {
         }
     }
 
-    public Client(String nom, String prenom, Adresse habitation) {
+    /*public Client(String nom, String prenom,Adresse Habitation) {
         this.nom = nom;
         this.prenom = prenom;
-        Habitation = habitation;
-    }
+        this.Habitation = Habitation;
+        if(this.Livraison==null){
+            this.Livraison=livraison;
+        }else{
+            this.Habitation=Habitation;
+        }
+    }*/
 
     public Client(String nom, String prenom) {
         this.nom = nom;
@@ -67,10 +74,11 @@ public class Client {
     @Override
     public String toString() {
         return "Client{" +
-                "nom='" + nom + '\n' +
-                ", prenom='" + prenom + '\n' +
-                ", Habitation=" + Habitation + '\n' +'\n'+
-                ", Livraison=" + Livraison + '\n' +'\n'+
+                "nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", Habitation=" + Habitation +
+                ", Livraison=" + Livraison +
+                ", AdresseEtendue=" + AdresseEtendue +
                 '}';
     }
 }

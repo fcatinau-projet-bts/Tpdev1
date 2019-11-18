@@ -12,10 +12,12 @@ public class ClientTest {
   private Client c;
   private Adresse livraison;
   private ArrayList<Adresse>adresselivraison;
+  private AdresseEtendue adresseEtendue;
 
   @Before
   public void initializeEachTest() {
     this.c = new Client("Dijkstra", "Edsger");
+    this.adresseEtendue=new AdresseEtendue("catinaud.florian@gmail.com","catinaud_florian.com");
   }
 
   @Test
@@ -50,14 +52,13 @@ public class ClientTest {
     assertEquals(this.c.getHabitation(),this.c.getLivraison());
   }
 
-  /*@Test
-  public void Plusieuradresselivraison(){
-    Adresse LivVierzon =new Adresse("79 Rue Beau Site","Vierzon",18100,"Catinaud");
-    Adresse LivTours=new Adresse("1 Square Francis Poulenc","Tours",37000,"Catinaud");
+  @Test
+  public void GetUrl(){
+    assertEquals("catinaud_florian.com",this.adresseEtendue.getUrl());
+  }
 
-    adresselivraison.add(LivVierzon);
-    adresselivraison.add(LivTours);
-
-    assertEquals(adresselivraison,this.c.getLivraison());
-  }*/
+  @Test
+  public void GetEmail(){
+    assertEquals("catinaud.florian@gmail.com",this.adresseEtendue.getEmail());
+  }
 }

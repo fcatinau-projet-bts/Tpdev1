@@ -7,20 +7,24 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Adresse> livraison = new ArrayList<>();
 
+        Client Flo=new Client("CATINAUD","Florian");
+        Adresse LivVierzon= new Adresse("79 Rue beau site","VIERZON",18100,"CATINAUD");
+        Adresse LivTours = new Adresse("1 Square Francis Poulenc","TOURS",37000,"CATINAUD");
 
-        Adresse DomTest = new Adresse("Rue du test", "Test", 0000, "Test01");
+        Adresse DomFlo = new Adresse("79 Rue beau site","VIERZON",18100,"CATINAUD");
 
-        Adresse Livkernighan = new Adresse("2 rue du cimetière", "Paris", 75001, "Kernighan");
-        Adresse LivKnuth = new Adresse("1 rue du cinema", "Marseille", 13001, "Knuth");
+        AdresseEtendue adetendueFlo= new AdresseEtendue("catinaud.florian@gmail.com","catinaud_florian.com");
 
-        livraison.add(Livkernighan);
-        livraison.add(LivKnuth);
-
-
-        Client Test = new Client("Test01", "test01", livraison, DomTest);
+        livraison.add(LivTours);
+        livraison.add(LivVierzon);
 
 
-        System.out.println(Test.toString());
+        //Client TestDom = new Client("Test02", "test01", DomtestDom);
+        Client CTest = new Client("CATINAUD", "Florian", livraison, DomFlo,adetendueFlo);
+
+        //System.out.println(TestDom.toString());
+        System.out.println("---------------------------------------------------------------------------------");
+        System.out.println(CTest.toString());
 
 
     }
